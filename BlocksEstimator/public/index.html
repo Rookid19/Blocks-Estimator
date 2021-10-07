@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<!-- Created By CodingNepal - www.codingnepalweb.com -->
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <!-- <title>Responsive Mega Menu | CodingNepal</title> -->
+      <link rel="stylesheet" href="style.css" />
+      <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+      <title>Blocks Estimator</title>
+   </head>
+   <body>
+      <nav>
+         <div class="wrapper">
+            <div class="logo"><a href="#">BLOCKS ESTIMATOR</a></div>
+            <input type="radio" name="slider" id="menu-btn" />
+            <input type="radio" name="slider" id="close-btn" />
+            <ul class="nav-links">
+               <label for="close-btn" class="btn close-btn"
+                  ><i class="fas fa-times"></i
+               ></label>
+               <li><a href="#metresbody">Metres</a></li>
+               <li><a href="#millimetresbody">Millimetres</a></li>
+               <li><a href="#centimetresbody">Centimetres</a></li>
+               <li><a href="#feetbody">Feet</a></li>
+               <li><a href="#inchesbody">Inches</a></li>
+            </ul>
+            <label for="menu-btn" class="btn menu-btn"
+               ><i class="fas fa-bars"></i
+            ></label>
+         </div>
+      </nav>
+
+      <br /><br /><br />
+      <div>
+         <center><h2>Choose Your Measurement</h2></center>
+
+         <div class="container">
+            <div class="metresbody" id="metresbody">
+               <h1 id="metres"><u>Metres</u></h1>
+
+               <div class="F-DPC">
+                  <div>
+                     <h2><u>From Foundation to DPC(1st Phase)</u></h2>
+                  </div>
+                  <!-- <h3>Enter the total length of walls</h3> -->
+
+                  <h3>Enter the total length of walls</h3>
+                  <input
+                     type="text"
+                     id="number1Phase1"
+                     placeholder="Enter the total length of walls"
+                  />m
+                  <h3>Enter the height of walls from foundation to DPC</h3>
+                  <input
+                     type="text"
+                     id="number2Phase1"
+                     placeholder="Enter the height of wall from foundation to DPC"
+                  />m
+
+                  <h3>RESULTS(1st Phase)</h3>
+                  <h3 class="list" id="list"></h3>
+                  <!-- <li class="minus">Cash <span>-¢400</span> <button class="delete-btn">X</button> </li> -->
+
+                  <button class="btn" onclick="metresPhase1(this)">
+                     Calculate
+                  </button>
+                  <button class="btn1" onclick="metresPhase1clear(this)">
+                     Clear
+                  </button>
+
+                  <!-- 2ND PHASE FOUNDATION TO LINTEL -->
+                  <div>
+                     <h2><u>From DPC to Lintel(2nd Phase)</u></h2>
+                  </div>
+
+                  <h3>
+                     Enter the total length of walls (excluding areas like
+                     verandahs)
+                  </h3>
+                  <input
+                     type="text"
+                     id="number1Phase2"
+                     placeholder="Enter the total length of walls(excluding areas like verandahs)"
+                  />m
+                  <h3>Enter the height of walls from DPC to Lintel</h3>
+                  <input
+                     type="text"
+                     id="number2Phase2"
+                     placeholder="Enter the height of wall from foundation to DPC"
+                  />m
+                  <h3>
+                     Enter the total area of all doors from the building data
+                  </h3>
+                  <input
+                     type="text"
+                     id="number3Phase2"
+                     placeholder=" Enter the total area of all doors from the building data"
+                  />m
+                  <h3>
+                     Enter the total area of all windows from the building data
+                  </h3>
+                  <input
+                     type="text"
+                     id="number4Phase2"
+                     placeholder="Enter the total area of all windows from the building data"
+                  />m
+                  <!-- <br> -->
+
+                  <h3>RESULTS(2nd Phase)</h3>
+                  <h3 class="show" id="show"></h3>
+                  <!-- <li class="minus">Cash <span>-¢400</span> <button class="delete-btn">X</button> </li> -->
+
+                  <button class="btn" onclick="metresPhase2(this)">
+                     Calculate
+                  </button>
+                  <button class="btn1" onclick="metresPhase2clear(this)">
+                     Clear
+                  </button>
+
+                  <!-- 3RD PHASE FROM LINTEL TO ROOFING -->
+
+                  <div>
+                     <h2><u>From Lintel to Roofing(3rd Phase)</u></h2>
+                  </div>
+
+                  <h3>Enter the total length of walls</h3>
+                  <input
+                     type="text"
+                     id="number1Phase3"
+                     placeholder="Enter the total length of walls"
+                  />m
+                  <h3>Enter the height of walls from Lintel to Roofing</h3>
+                  <input
+                     type="text"
+                     id="number2Phase3"
+                     placeholder="Enter the height of wall from Lintel to Roofing"
+                  />m
+
+                  <!-- <br> -->
+
+                  <h3>RESULTS(3rd Phase)</h3>
+                  <h3 class="display" id="display"></h3>
+                  <!-- <li class="minus">Cash <span>-¢400</span> <button class="delete-btn">X</button> </li> -->
+
+                  <button class="btn" onclick="metresPhase3(this)">
+                     Calculate
+                  </button>
+                  <button class="btn1" onclick="metresPhase3clear(this)">
+                     Clear
+                  </button>
+                  <br />
+                  <br />
+
+                  <button class="btn" onclick="totalMetres(this)">
+                     Calculate All Blocks
+                  </button>
+
+                  <h3 id="totalMetres" class="totalMetres"></h3>
+               </div>
+            </div>
+
+            <!-- Millimetres -->
+
+            <div class="millimetresbody" id="millimetresbody">
+               <h1 id="metres1"><u> Millimetres</u></h1>
+
+               <div class="F-DPC1">
+                  <div>
+                     <u><h2>From Foundation to DPC(1st Phase)</h2></u>
+                  </div>
+
+                  <h3>Enter the total length of walls</h3>
+                  <input
+                     type="text"
+                     id="digit1Phase1"
+                     placeholder="Enter the total length of walls"
+                  />mm
+
+                  <h3>Enter the height of walls from foundation to DPC</h3>
+                  <input
+                     type="text"
+                     id="digit2Phase1"
+                     placeholder="Enter the height of walls from foundation to DPC"
+                  />mm
+
+                  <h3>RESULTS(1st Phase)</h3>
+                  <h3 class="list1" id="list1"></h3>
+                  <!-- <li class="minus">Cash <span>-¢400</span> <button class="delete-btn">X</button> </li> -->
+
+                  <button class="btn" onclick="millimetresPhase1(this)">
+                     Calculate
+                  </button>
+                  <button class="btn1" onclick="millimetresPhase1clear(this)">
+                     Clear
+                  </button>
+
+                  <div>
+                     <h2><u>From DPC to Lintel(2nd Phase)</u></h2>
+                  </div>
+
+                  <h3>
+                     Enter the total length of walls (excluding areas like
+                     verandahs)
+                  </h3>
+                  <input
+                     type="text"
+                     id="digit1Phase2"
+                     placeholder="Enter the total length of walls(excluding areas like verandahs)"
+                  />mm
+                  <h3>Enter the height of walls from DPC to Lintel</h3>
+                  <input
+                     type="text"
+                     id="digit2Phase2"
+                     placeholder="Enter the height of wall from foundation to DPC"
+                  />mm
+                  <h3>
+                     Enter the total area of all doors from the building data
+                  </h3>
+                  <input
+                     type="text"
+                     id="digit3Phase2"
+                     placeholder="Enter the total area of all doors from the building data"
+                  />mm
+                  <h3>
+                     Enter the total area of all windows from the building data
+                  </h3>
+                  <input
+                     type="text"
+                     id="digit4Phase2"
+                     placeholder=" Enter the total area of all windows from the building data "
+                  />mm
+                  <!-- <br> -->
+
+                  <h3>RESULTS(2nd Phase)</h3>
+                  <h3 class="show1" id="show1"></h3>
+                  <!-- <li class="minus">Cash <span>-¢400</span> <button class="delete-btn">X</button> </li> -->
+
+                  <button class="btn" onclick="millimetresPhase2(this)">
+                     Calculate
+                  </button>
+                  <button class="btn1" onclick="millimetresPhase2clear(this)">
+                     Clear
+                  </button>
+
+                  <!-- 3RD PHASE FROM LINTEL TO ROOFING -->
+
+                  <div>
+                     <h2><u>From Lintel to Roofing(3rd Phase)</u></h2>
+                  </div>
+
+                  <h3>Enter the total length of walls</h3>
+                  <input
+                     type="text"
+                     id="digit1Phase3"
+                     placeholder="Enter the total length of walls"
+                  />mm
+                  <h3>Enter the height of walls from Lintel to Roofing</h3>
+                  <input
+                     type="text"
+                     id="digit2Phase3"
+                     placeholder="Enter the height of wall from Lintel to Roofing"
+                  />mm
+
+                  <!-- <br> -->
+
+                  <h3>RESULTS(3rd Phase)</h3>
+                  <h3 class="display1" id="display1"></h3>
+                  <!-- <li class="minus">Cash <span>-¢400</span> <button class="delete-btn">X</button> </li> -->
+
+                  <button class="btn" onclick="millimetresPhase3(this)">
+                     Calculate
+                  </button>
+                  <button class="btn1" onclick="millimetresPhase3clear()">
+                     Clear
+                  </button>
+                  <br />
+                  <br />
+
+                  <button class="btn" onclick="totalMillimetres(this)">
+                     Calculate All Blocks
+                  </button>
+                  <h3 id="totalMillimetres" class="totalMillimetres"></h3>
+               </div>
+            </div>
+
+            <!-- Centimetres -->
+
+            <div class="centimetresbody" id="centimetresbody">
+               <h1 id="metres3"><u> Centimetres</u></h1>
+
+               <div class="F-DPC2">
+                  <div>
+                     <h2><u> From Foundation to DPC(1st Phase)</u></h2>
+                  </div>
+                  <!-- <h3>Enter the total length of walls</h3> -->
+
+                  <h3>Enter the total length of walls</h3>
+                  <input
+                     type="text"
+                     id="numeral1Phase1"
+                     placeholder="Enter the total length of walls"
+                  />cm
+
+                  <h3>Enter the height of walls from foundation to DPC</h3>
+                  <input
+                     type="text"
+                     id="numeral2Phase1"
+                     placeholder="Enter the height of walls from foundation to DPC"
+                  />cm
+
+                  <h3>RESULTS(1st Phase)</h3>
+                  <h3 class="list2" id="list2"></h3>
+                  <!-- <li class="minus">Cash <span>-¢400</span> <button class="delete-btn">X</button> </li> -->
+
+                  <button class="btn" onclick="centimetresPhase1(this)">
+                     Calculate
+                  </button>
+                  <button class="btn1" onclick="centimetresPhase1clear(this)">
+                     Clear
+                  </button>
+
+                  <div>
+                     <h2><u>From DPC to Lintel(2nd Phase)</u></h2>
+                  </div>
+
+                  <h3>
+                     Enter the total length of walls (excluding areas like
+                     verandahs)
+                  </h3>
+                  <input
+                     type="text"
+                     id="numeral1Phase2"
+                     placeholder="Enter the total length of walls(excluding areas like verandahs)"
+                  />cm
+                  <h3>Enter the height of walls from DPC to Lintel</h3>
+                  <input
+                     type="text"
+                     id="numeral2Phase2"
+                     placeholder="Enter the height of wall from DPC to DPC"
+                  />cm
+                  <h3>
+                     Enter the total area of all doors from the building data
+                  </h3>
+                  <input
+                     type="text"
+                     id="numeral3Phase2"
+                     placeholder="Enter the total length of walls(excluding areas like verandahs)"
+                  />cm
+                  <h3>
+                     Enter the total area of all windows from the building data
+                  </h3>
+                  <input
+                     type="text"
+                     id="numeral4Phase2"
+                     placeholder="Enter the height of wall from foundation to DPC"
+                  />cm
+                  <!-- <br> -->
+
+                  <h3>RESULTS(2nd Phase)</h3>
+                  <h3 class="show2" id="show2"></h3>
+                  <!-- <li class="minus">Cash <span>-¢400</span> <button class="delete-btn">X</button> </li> -->
+
+                  <button class="btn" onclick="centimetresPhase2(this)">
+                     Calculate
+                  </button>
+                  <button class="btn1" onclick="centimetresPhase2clear(this)">
+                     Clear
+                  </button>
+
+                  <!-- 3RD PHASE FROM LINTEL TO ROOFING -->
+
+                  <div>
+                     <h2><u>From Lintel to Roofing(3rd Phase)</u></h2>
+                  </div>
+
+                  <h3>Enter the total length of walls</h3>
+                  <input
+                     type="text"
+                     id="numeral1Phase3"
+                     placeholder="Enter the total length of walls"
+                  />cm
+                  <h3>Enter the height of walls from Lintel to Roofing</h3>
+                  <input
+                     type="text"
+                     id="numeral2Phase3"
+                     placeholder="Enter the height of wall from Lintel to Roofing"
+                  />cm
+
+                  <!-- <br> -->
+
+                  <h3>RESULTS(3rd Phase)</h3>
+                  <h3 class="display2" id="display2"></h3>
+                  <!-- <li class="minus">Cash <span>-¢400</span> <button class="delete-btn">X</button> </li> -->
+
+                  <button class="btn" onclick="centimetresPhase3(this)">
+                     Calculate
+                  </button>
+                  <button class="btn1" onclick="centimetresPhase3clear(this)">
+                     Clear
+                  </button>
+                  <br />
+                  <br />
+
+                  <button class="btn" onclick="totalCentimetres(this)">
+                     Calculate All Blocks
+                  </button>
+                  <h3 id="totalCentimetres" class="totalCentimetres"></h3>
+               </div>
+            </div>
+
+            <!-- Feet -->
+            <div class="feetbody" id="feetbody">
+               <h1 id="metres4"><u>Feet</u></h1>
+
+               <div class="F-DPC4">
+                  <div>
+                     <h2><u>From Foundation to DPC(1st Phase)</u></h2>
+                  </div>
+                  <!-- <h3>Enter the total length of walls</h3> -->
+
+                  <h3>Enter the total length of walls</h3>
+                  <input
+                     type="text"
+                     id="figure1Phase1"
+                     placeholder="Enter the total length of walls"
+                  />Ft
+
+                  <h3>Enter the height of walls from foundation to DPC</h3>
+                  <input
+                     type="text"
+                     id="figure2Phase1"
+                     placeholder="Enter the height of walls from foundation to DPC"
+                  />Ft
+
+                  <h3>RESULTS(1st Phase)</h3>
+                  <h3 class="list3" id="list3"></h3>
+                  <button class="btn" onclick="feetPhase1(this)">
+                     Calculate
+                  </button>
+                  <button class="btn1" onclick="feetPhase1clear(this)">
+                     Clear
+                  </button>
+                  <!-- 2nd Phase  -->
+
+                  <div>
+                     <h2><u>From DPC to Lintel(2nd Phase)</u></h2>
+                  </div>
+
+                  <h3>
+                     Enter the total length of walls (excluding areas like
+                     verandahs)
+                  </h3>
+                  <input
+                     type="text"
+                     id="figure1Phase2"
+                     placeholder="Enter the total length of walls(excluding areas like verandahs)"
+                  />Ft
+                  <h3>Enter the height of walls from DPC to Lintel</h3>
+                  <input
+                     type="text"
+                     id="figure2Phase2"
+                     placeholder="Enter the height of wall from foundation to DPC"
+                  />Ft
+                  <h3>
+                     Enter the total area of all doors from the building data
+                  </h3>
+                  <input
+                     type="text"
+                     id="figure3Phase2"
+                     placeholder="Enter the total length of walls(excluding areas like verandahs)"
+                  />Ft
+                  <h3>
+                     Enter the total area of all windows from the building data
+                  </h3>
+                  <input
+                     type="text"
+                     id="figure4Phase2"
+                     placeholder="Enter the height of wall from foundation to DPC"
+                  />Ft
+                  <!-- <br> -->
+
+                  <h3>RESULTS(2nd Phase)</h3>
+                  <h3 class="show3" id="show3"></h3>
+                  <!-- <li class="minus">Cash <span>-¢400</span> <button class="delete-btn">X</button> </li> -->
+
+                  <button class="btn" onclick="feetPhase2(this)">
+                     Calculate
+                  </button>
+                  <button class="btn1" onclick="feetPhase2clear(this)">
+                     Clear
+                  </button>
+
+                  <!-- 3RD PHASE FROM LINTEL TO ROOFING -->
+
+                  <div>
+                     <h2><u>From Lintel to Roofing(3rd Phase)</u></h2>
+                  </div>
+
+                  <h3>Enter the total length of walls</h3>
+                  <input
+                     type="text"
+                     id="figure1Phase3"
+                     placeholder="Enter the total length of walls"
+                  />Ft
+                  <h3>Enter the height of walls from Lintel to Roofing</h3>
+                  <input
+                     type="text"
+                     id="figure2Phase3"
+                     placeholder="Enter the height of wall from Lintel to Roofing"
+                  />Ft
+
+                  <!-- <br> -->
+
+                  <h3>RESULTS(3rd Phase)</h3>
+                  <h3 class="display3" id="display3"></h3>
+
+                  <button class="btn" onclick="feetPhase3(this)">
+                     Calculate
+                  </button>
+                  <button class="btn1" onclick="feetPhase3clear(this)">
+                     Clear
+                  </button>
+                  <br />
+                  <br />
+
+                  <button class="btn" onclick="totalFeet(this)">
+                     Calculate All Blocks
+                  </button>
+                  <h3 id="totalFeet" class="totalFeet"></h3>
+               </div>
+            </div>
+
+            <!-- Inches -->
+            <div class="inchesbody" id="inchesbody">
+               <h1 id="metres1"><u>Inches</u></h1>
+
+               <div class="F-DPC1">
+                  <div>
+                     <h2><u>From Foundation to DPC(1st Phase)</u></h2>
+                  </div>
+                  <h3>Enter the total length of walls</h3>
+                  <input
+                     type="text"
+                     id="value1Phase1"
+                     placeholder="Enter the total length of walls"
+                  />Inch
+
+                  <h3>Enter the height of walls from foundation to DPC</h3>
+                  <input
+                     type="text"
+                     id="value2Phase1"
+                     placeholder="Enter the height of walls from foundation to DPC"
+                  />Inch
+               </div>
+               <h3>RESULTS(1st Phase)</h3>
+               <h3 class="list4" id="list4"></h3>
+               <button class="btn" onclick="inchesPhase1(this)">
+                  Calculate
+               </button>
+               <button class="btn1" onclick=" inchesPhase1clear(this)">
+                  Clear
+               </button>
+
+               <div>
+                  <h2><u>From DPC to Lintel(2nd Phase)</u></h2>
+               </div>
+
+               <h3>
+                  Enter the total length of walls (excluding areas like
+                  verandahs)
+               </h3>
+               <input
+                  type="text"
+                  id="value1Phase2"
+                  placeholder="Enter the total length of walls(excluding areas like verandahs)"
+               />Inch
+               <h3>Enter the height of walls from DPC to Lintel</h3>
+               <input
+                  type="text"
+                  id="value2Phase2"
+                  placeholder="Enter the height of wall from foundation to DPC"
+               />Inch
+               <h3>Enter the total area of all doors from the building data</h3>
+               <input
+                  type="text"
+                  id="value3Phase2"
+                  placeholder="Enter the total length of walls(excluding areas like verandahs)"
+               />Inch
+               <h3>
+                  Enter the total area of all windows from the building data
+               </h3>
+               <input
+                  type="text"
+                  id="value4Phase2"
+                  placeholder="Enter the height of wall from foundation to DPC"
+               />Inch
+               <!-- <br> -->
+
+               <h3>RESULTS(2nd Phase)</h3>
+               <h3 class="show4" id="show4"></h3>
+               <!-- <li class="minus">Cash <span>-¢400</span> <button class="delete-btn">X</button> </li> -->
+
+               <button class="btn" onclick="inchesPhase2(this)">
+                  Calculate
+               </button>
+               <button class="btn1" onclick="inchesPhase2clear(this)">
+                  Clear
+               </button>
+
+               <!-- 3RD PHASE FROM LINTEL TO ROOFING -->
+
+               <div>
+                  <h2><u>From Lintel to Roofing(3rd Phase)</u></h2>
+               </div>
+
+               <h3>Enter the total length of walls</h3>
+               <input
+                  type="text"
+                  id="value1Phase3"
+                  placeholder="Enter the total length of walls"
+               />Inch
+               <h3>Enter the height of walls from Lintel to Roofing</h3>
+               <input
+                  type="text"
+                  id="value2Phase3"
+                  placeholder="Enter the height of wall from Lintel to Roofing"
+               />Inch
+
+               <!-- <br> -->
+
+               <h3>RESULTS(3rd Phase)</h3>
+               <h3 class="display4" id="display4"></h3>
+               <!-- <li class="minus">Cash <span>-¢400</span> <button class="delete-btn">X</button> </li> -->
+
+               <button class="btn" onclick="inchesPhase3(this)">
+                  Calculate
+               </button>
+               <button class="btn1" onclick="inchesPhase3(this)">Clear</button>
+               <br />
+               <br />
+
+               <button class="btn" onclick="totalInches(this)">
+                  Calculate All Blocks
+               </button>
+               <h3 id="totalInches" class="totalInches"></h3>
+            </div>
+         </div>
+      </div>
+      <script src="index.js"></script>
+   </body>
+</html>

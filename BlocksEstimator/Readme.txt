@@ -1,0 +1,1 @@
+Calculate the total number of blocks of a particular building plan.
